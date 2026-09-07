@@ -1,0 +1,114 @@
+# Sveltia CMS configuration — edits models.json (the AI-model marketplace the Pure
+# BPM Desktop app reads live). Split out from pure-plugins-releases so each product
+# owns its own editor; the plugin-pages editor stays in that repo.
+#
+# The app fetches https://raw.githubusercontent.com/Pure-BPM/pure-desktop-models/main/models.json
+# on launch, so anything published here appears on the marketplace cards with NO app
+# update. Every save is a normal git commit — fully version-history'd and revertable.
+
+backend:
+  name: github
+  repo: Pure-BPM/pure-desktop-models
+  branch: main
+  # OAuth broker for GitHub sign-in (shared Sveltia auth worker on Cloudflare —
+  # same github.io domain as the plugin editor, so the existing OAuth app covers it).
+  base_url: https://sveltia-cms-auth.purebpm.workers.dev
+
+# Model card images live under models/<id>/ and are referenced in models.json by
+# full raw URL. The image widget below stores a site-relative "/models/<file>" path;
+# for a new card image, set the full raw URL by hand to match existing entries.
+media_folder: models
+public_folder: /models
+
+collections:
+  - name: models
+    label: AI Model pages
+    files:
+      - name: models
+        label: All AI models
+        file: models.json
+        description: >-
+          Edit each marketplace AI model's card here. The app fetches models.json
+          on launch, so text/price/requirement changes go live with no app update.
+          Price shown here is DISPLAY ONLY — the charge is enforced server-side
+          from coinz_pricing. Asset URLs + SHA-256 must match the published files.
+        fields:
+          - { name: schema, widget: hidden, default: 1 }
+          - {
+              name: updated,
+              label: 'Last updated (free text, e.g. 2026-09-06)',
+              widget: string,
+              required: false,
+            }
+          - name: models
+            label: Models
+            label_singular: Model
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - {
+                  name: id,
+                  label: 'ID (do NOT change — the app matches on this)',
+                  widget: string,
+                }
+              - { name: name, label: Name, widget: string }
+              - { name: blurb, label: 'Card blurb (short line)', widget: string }
+              - { name: description, label: 'Full description', widget: text }
+              - {
+                  name: highlights,
+                  label: Highlights,
+                  widget: list,
+                  required: false,
+                  hint: 'One bullet per entry.',
+                }
+              - { name: image, label: Card image, widget: image, required: false }
+              - {
+                  name: category,
+                  label: Category,
+                  widget: select,
+                  options: ['generation', 'mastering', 'midi', 'voice'],
+                }
+              - {
+                  name: priceCoinz,
+                  label: 'Price in Coinz (DISPLAY ONLY — server enforces)',
+                  widget: number,
+                  value_type: int,
+                }
+              - {
+                  name: downloadSizeBytes,
+                  label: 'Download size in bytes',
+                  widget: number,
+                  value_type: int,
+                }
+              - { name: version, label: Version, widget: string }
+              - {
+                  name: hidden,
+                  label: 'Hidden? (does not render as a card)',
+                  widget: boolean,
+                  default: false,
+                  required: false,
+                }
+              - {
+                  name: comingSoon,
+                  label: 'Coming soon?',
+                  widget: boolean,
+                  default: false,
+                  required: false,
+                }
+              - name: requirements
+                label: Hardware requirements
+                widget: object
+                required: false
+                fields:
+                  - { name: minRamGB, label: 'Min RAM (GB)', widget: number, value_type: int, required: false }
+                  - { name: appleSiliconOnly, label: 'Apple Silicon only?', widget: boolean, default: false, required: false }
+                  - { name: minMacOS, label: 'Min macOS (e.g. 13.0)', widget: string, required: false }
+              - name: assets
+                label: Downloadable assets (weight files)
+                widget: list
+                summary: '{{fields.dest}}'
+                fields:
+                  - { name: url, label: Public asset URL, widget: string }
+                  - { name: bytes, label: 'Expected size (bytes)', widget: number, value_type: int }
+                  - { name: sha256, label: 'SHA-256 (lowercase hex)', widget: string }
+                  - { name: dest, label: 'Destination path under models/<id>/', widget: string }
