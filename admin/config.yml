@@ -82,6 +82,12 @@ collections:
                 }
               - { name: version, label: Version, widget: string }
               - {
+                  name: license,
+                  label: 'License (SPDX id, e.g. Apache-2.0 / MIT / GPL-3.0)',
+                  widget: string,
+                  required: false,
+                }
+              - {
                   name: hidden,
                   label: 'Hidden? (does not render as a card)',
                   widget: boolean,
