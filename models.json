@@ -97,8 +97,8 @@
     {
       "id": "clap",
       "name": "Semantic Search",
-      "blurb": "Find tracks by feeling, not filename - natural language search powered by LAION-CLAP.",
-      "description": "Your library has the right track for every moment - CLAP makes it findable. Once installed, the Vibe Search in your header reads sonic descriptions: type \"euphoric festival drop\" or \"dusty vintage soul\" and Pure BPM surfaces the tracks that sound that way, drawn straight from your collection. The soundprint for every track is built and stored locally on your Mac. Nothing is sent anywhere, and the search is instant.",
+      "blurb": "Find tracks by feeling, not filename - natural language search for your entire library.",
+      "description": "Your library has the right track for every moment - Semantic Search makes it findable. Once installed, the Vibe Search in your header reads sonic descriptions: type \"euphoric festival drop\" or \"dusty vintage soul\" and Pure BPM surfaces the tracks that sound that way, drawn straight from your collection. The soundprint for every track is built and stored locally on your Mac. Nothing is sent anywhere, and the search is instant.",
       "highlights": [
         "Natural language search - describe the sound and find it",
         "Understands mood, genre, instrumentation, and energy",
