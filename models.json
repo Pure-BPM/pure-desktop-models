@@ -108,14 +108,15 @@
       "image": "https://raw.githubusercontent.com/Pure-BPM/pure-desktop-models/main/models/clap/card.png",
       "category": "search",
       "priceCoinz": 0,
-      "downloadSizeBytes": 0,
+      "downloadSizeBytes": 482344960,
       "version": "1",
       "hidden": false,
       "requirements": {},
       "assets": [],
       "license": "CC0-1.0",
       "sourceUrl": "https://github.com/LAION-AI/CLAP",
-      "author": "LAION"
+      "author": "LAION",
+      "installNote": "model weights download on first index build"
     },
     {
       "id": "test-model",
