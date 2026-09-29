@@ -98,7 +98,7 @@
       "id": "clap",
       "name": "Semantic Search",
       "blurb": "Find tracks by feeling, not filename - natural language search powered by LAION-CLAP.",
-      "description": "LAION-CLAP is an open-source audio-language model that understands what music sounds like, not just what it's called. Type 'melancholy piano late at night' or 'upbeat 90s hip-hop' in the search bar and Pure BPM finds matching tracks using tonal and rhythmic similarity. Analysis runs locally - your library stays private. Included with Pure BPM at no extra cost.\n\nLAION-CLAP is free software (MIT) - source: https://github.com/LAION-AI/CLAP",
+      "description": "Your library has the right track for every moment - CLAP makes it findable. Once installed, the Vibe Search in your header reads sonic descriptions: type \"euphoric festival drop\" or \"dusty vintage soul\" and Pure BPM surfaces the tracks that sound that way, drawn straight from your collection. The soundprint for every track is built and stored locally on your Mac. Nothing is sent anywhere, and the search is instant.",
       "highlights": [
         "Natural language search - describe the sound and find it",
         "Understands mood, genre, instrumentation, and energy",
