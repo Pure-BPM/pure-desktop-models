@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-07",
+  "updated": "2026-10-12",
   "models": [
     {
       "id": "voice",
@@ -168,43 +168,6 @@
       ],
       "license": "Apache-2.0",
       "sourceUrl": "https://github.com/spotify/basic-pitch"
-    },
-    {
-      "id": "matchering",
-      "name": "Matchering",
-      "blurb": "Master your track to sound like your reference - locally, in minutes.",
-      "description": "Pick any professionally-mastered track you love as the reference, and Matchering reshapes your mix to match it (loudness, frequency balance, peak and stereo width) right on your Mac. The same open-source engine trusted by professional mastering services, running privately in an isolated environment: no upload, no per-run charges, works offline. Free to use, master as often as you like.\n\nMatchering is free software (GPL-3.0) by Sergey Grishakov (sergree). Source: https://github.com/sergree/matchering",
-      "highlights": [
-        "Reference mastering - your track, shaped to a track you love",
-        "Matches loudness, EQ balance, peaks and stereo width",
-        "Runs fully on-device in an isolated engine - private and offline",
-        "Free - no credits per master"
-      ],
-      "image": "https://raw.githubusercontent.com/Pure-BPM/pure-desktop-models/main/models/matchering/card.jpg",
-      "category": "mastering",
-      "priceCoinz": 0,
-      "downloadSizeBytes": 102533171,
-      "installNote": "downloads dependencies on first install",
-      "version": "1",
-      "hidden": false,
-      "requirements": {},
-      "assets": [
-        {
-          "url": "https://raw.githubusercontent.com/Pure-BPM/pure-desktop-models/main/models/matchering/matchering_worker.py",
-          "bytes": 4238,
-          "sha256": "8a81fd9ff3f33a898e6dfbd32b696f0079d4c19452f51ea48378ff42b9eec379",
-          "dest": "matchering_worker.py"
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Pure-BPM/pure-desktop-models/main/models/matchering/requirements_matchering.txt",
-          "bytes": 655,
-          "sha256": "13157e182a82798bffeb7cb08b954e9de9135cc0b112c1653be65248953ae091",
-          "dest": "requirements_matchering.txt"
-        }
-      ],
-      "license": "GPL-3.0",
-      "sourceUrl": "https://github.com/sergree/matchering",
-      "credit": "Open source · Based on Sergey Grishakov's Matchering"
     }
   ]
 }
